@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<AGTaichiMPM3D>
+  <integrator
+    dt = "0.00001"
+    bulk_modulus = "1000000.0"
+    shear_modulus = "100000.0"
+    herschel_bulkley_power = "0.44"
+    eta = "305.23"
+    yield_stress = "708.13"
+    flip_pic_alpha = "0.95"
+    max_time = "5.0"
+  />
+  <auto_save fps = "50" filename = "config_%06d.dat"/>
+  <grid min = "-5.0 -0.4 -5.0" max = "5.0 7.0 5.0" cell_width = "0.12"/>
+  <!--<cuboid min="0.0 0.0 0.3" max="0.5 0.3 0.7" density="0.96" cell_samples_per_dim="2" vel="0.0 0.0 0.0"/>-->
+  <!--<cuboid min="-2.22878 0.377395 -3.04843" max="2.80502 1.40787 2.2542" density="0.96" cell_samples_per_dim="2" vel="0.0 0.0 0.0"/>-->
+  <point_file filename = "./dip_material_e5" density = "0.91" velocity = "0.0 0.0 0.0" start_point = "0.0 0.0 0.0" />
+
+  <dynamic_rigid_object filename = "./dip_plate_sdf_retry" velocity = "0.0 0.0 0.0" motion_function = "static" boundary_behavior = "sticking" start_point = "0.0 0.0 0.0" />
+  <dynamic_rigid_object filename = "./cutted_serori_60_sdf_retry" velocity = "0.0 0.0 0.0" motion_function = "dip" boundary_behavior = "sticking" start_point = "0.0 0.0 0.0" />
+
+  <!--<static_plane x="0.0 0.0 0.0" n="0.0 1.0 0.0" boundary_behavior="sticking"/>-->
+  <!--<static_plane x="0.0 0.0 0.0" n="0.0 1.0 0.0" boundary_behavior="sliding"/>-->
+
+  <!--<dynamic_rigid_object filename = "./dip_plate_sdf_retry" velocity = "0.0 0.0 0.0" motion_function = "static" boundary_behavior = "sticking" start_point = "0.0 0.0 0.0" />-->
+
+  <static_box min="0.0 -0.2 0.0" max="10.0 0.0 10.0" boundary_behavior="sticking"/>
+  <!--<static_box min="-0.2 -0.2 0.0" max="0.0 1.0 1.0" boundary_behavior="sticking"/>
+  <static_box min="0.0 0.0 0.1" max="0.5 1.0 0.3" boundary_behavior="sticking"/>
+  <static_box min="0.0 0.0 0.7" max="0.5 1.0 0.9" boundary_behavior="sticking"/>
+  <static_box min="-0.2 -0.2 -0.2" max="1.0 1.0 0.0" boundary_behavior="sticking"/>
+  <static_box min="-0.2 -0.2 1.0" max="1.0 1.0 1.2" boundary_behavior="sticking"/>
+  <static_box min="1.0 -0.2 -0.2" max="1.2 1.0 1.2" boundary_behavior="sticking"/>-->
+  <near_earth_gravity f="0.0 -981.0 0.0"/>
+</AGTaichiMPM3D>

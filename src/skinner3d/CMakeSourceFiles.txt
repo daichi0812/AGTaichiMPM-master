@@ -1,0 +1,26 @@
+set( Sources
+  colorGrid.cpp
+  kdTree.cpp
+  main.cpp
+  MarchingCubes.cpp
+  slMatrix.cpp
+  slVector.cpp
+  smoothingGrid.cpp
+)
+
+set( Headers
+  colorGrid.h
+  kdTree.h
+  kdtree1nn.h
+  kdtreeknn.h
+  LookUpTable.h
+  MarchingCubes.h
+  priorityqueue.h
+  simplepriorityarray.h
+  slArray.h
+  slIO.h
+  slMatrix.h
+  slUtil.h
+  slVector.h
+  smoothingGrid.h
+)
